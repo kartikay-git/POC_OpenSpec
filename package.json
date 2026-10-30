@@ -1,0 +1,9 @@
+{
+  "name": "openspec-langchain-poc",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Locally pinned OpenSpec CLI for the LangChain POC",
+  "devDependencies": {
+    "@fission-ai/openspec": "1.15.0"
+  }
+}

@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}Welcome back{% endblock %}
+{% block content %}
+<section class="login-layout">
+  <div class="intro"><p class="eyebrow">ONE THING AT A TIME</p><h1>A little focus.<br>A lot of possibility.</h1><p class="lede">Your tasks, in one quiet place. Sign in to pick up where you left off.</p><div class="note"><span>01</span><p>Make room for what matters.<br><small>Start with your next small step.</small></p></div></div>
+  <div class="card login-card"><h2>Welcome back</h2><p>Sign in to your workspace.</p><form method="post">{% csrf_token %}{{ form.non_field_errors }}<label for="id_username">Username</label>{{ form.username }}{{ form.username.errors }}<label for="id_password">Password</label>{{ form.password }}{{ form.password.errors }}<input type="hidden" name="next" value="{{ next }}"><button class="primary full" type="submit">Sign in <span aria-hidden="true">→</span></button></form><p class="helper">Local demo: <strong>alice</strong> or <strong>bob</strong><br>Password: <code>DemoPass123!</code></p></div>
+</section>
+{% endblock %}

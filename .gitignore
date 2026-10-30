@@ -1,0 +1,73 @@
+# Local configuration and secrets (keep the documented, secret-free template)
+.env
+.env.*
+!.env.example
+.local-secret
+.local-secret.*
+/.codex/
+
+# Python environments and dependency caches
+.venv/
+venv/
+env/
+.uv-cache/
+.pip-cache/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python packaging output
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+
+# Node dependencies and package-manager caches (commit package-lock.json)
+node_modules/
+.npm-cache/
+.npm/
+
+# Test, lint, type-checking, and coverage output
+.pytest_cache/
+.pytest-tmp*/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+coverage/
+
+# Local Django databases, including SQLite journal/WAL/SHM files
+*.sqlite3
+*.sqlite3-*
+*.sqlite
+*.sqlite-*
+/application/staticfiles/
+/application/media/
+
+# Agent experiments: generated apps, nested Git repositories, transcripts,
+# model responses, local databases, and potentially private user requirements.
+# New runs copy this file; /runs/ stays relative to each repository root.
+/runs/
+
+# Local runtime logs
+*.log
+
+# Editor and operating-system files
+.idea/
+.vscode/
+*.code-workspace
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Intentionally tracked: application source and migrations, tests, scripts,
+# openspec/config.yaml and specs/changes, docs/screenshots, .env.example,
+# pyproject.toml, uv.lock, requirements.lock, package.json, package-lock.json.

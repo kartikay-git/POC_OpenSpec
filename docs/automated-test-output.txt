@@ -1,0 +1,83 @@
+System check identified no issues (0 silenced).
+No changes detected
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+Found 8 test(s).
+Operations to perform:
+  Synchronize unmigrated apps: messages, staticfiles
+  Apply all migrations: auth, contenttypes, sessions, todos
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying sessions.0001_initial... OK
+test_anonymous_redirected (todos.tests.BaselineTests.test_anonymous_redirected) ... ok
+test_blank_and_long_titles_rejected (todos.tests.BaselineTests.test_blank_and_long_titles_rejected) ... ok
+test_create_uses_session_owner (todos.tests.BaselineTests.test_create_uses_session_owner) ... ok
+test_csrf_required_for_create (todos.tests.BaselineTests.test_csrf_required_for_create) ... ok
+test_invalid_login (todos.tests.BaselineTests.test_invalid_login) ... ok
+test_login_and_logout (todos.tests.BaselineTests.test_login_and_logout) ... ok
+test_only_own_tasks_visible (todos.tests.BaselineTests.test_only_own_tasks_visible) ... ok
+test_title_is_escaped (todos.tests.BaselineTests.test_title_is_escaped) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.188s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+  Applying todos.0001_initial... OK
+System check identified no issues (0 silenced).
+{
+  "items": [
+    {
+      "id": "authentication",
+      "type": "spec",
+      "valid": true,
+      "issues": [],
+      "durationMs": 7
+    },
+    {
+      "id": "tasks",
+      "type": "spec",
+      "valid": true,
+      "issues": [],
+      "durationMs": 1
+    }
+  ],
+  "summary": {
+    "totals": {
+      "items": 2,
+      "passed": 2,
+      "failed": 0
+    },
+    "byType": {
+      "spec": {
+        "items": 2,
+        "passed": 2,
+        "failed": 0
+      }
+    }
+  },
+  "version": "1.0",
+  "root": {
+    "path": "F:\\Projects\\openspec-langchain-poc",
+    "source": "nearest"
+  }
+}
+...................................                                      [100%]
+35 passed in 74.35s (0:01:14)

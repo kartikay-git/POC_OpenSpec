@@ -1,0 +1,14 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Taskroom{% endblock %} · OpenSpec lab</title>
+  <link rel="stylesheet" href="{% static 'app.css' %}">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="{% url 'task-list' %}"><span class="brand-icon">✓</span> Taskroom</a><span class="badge">OPENSPEC × LANGCHAIN LAB</span></header>
+  <main>{% if messages %}<div class="messages" role="status">{% for message in messages %}<p>{{ message }}</p>{% endfor %}</div>{% endif %}{% block content %}{% endblock %}</main>
+  <footer>A small space to make progress.</footer>
+</body>
+</html>

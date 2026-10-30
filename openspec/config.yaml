@@ -1,0 +1,55 @@
+schema: spec-driven
+context: |
+  Local proof of concept: Django session-authenticated todo application, SQLite,
+  server-rendered HTML. Preserve login/logout and per-user task isolation.
+  State-changing requests must be POST and CSRF protected. Ownership is enforced
+  in server queries. No external services, new dependencies, or schema changes
+  are required for task deletion. Use the existing tasks capability for deletion.
+  Agent runs use an isolated copy. Application config and acceptance tests are
+  read-only to the agent. The controller owns review, verification, and archive.
+rules:
+  proposal:
+    - Keep under 300 words and state non-goals.
+  specs:
+    - Include owner success, unauthenticated rejection, and cross-user rejection.
+    - "Each requirement MUST use SHALL or MUST and have a #### Scenario heading."
+  design:
+    - Explain server-side authorization and CSRF handling.
+  tasks:
+    - Use numbered checkbox tasks and state how each is verified.
+operations:
+  apply:
+    guidance:
+      - Read existing files before editing. Keep changes small and preserve styling.
+      - Run checks and inspect results before marking tasks complete.
+
+# Project context (optional)
+# Add only constraints that should guide OpenSpec artifacts and workflows.
+# Include constraints an agent cannot infer by reading the code.
+# Keep general project documentation and discoverable codebase facts out.
+# Example:
+#   context: |
+#     Designs and tasks must cover Windows, macOS, and Linux
+#     Write all artifacts in Spanish
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always state what is out of scope
+#     tasks:
+#       - Break tasks into chunks of max 2 hours
+
+# Per-operation guidance (optional)
+# Add advisory guidance for how apply and archive work should be conducted.
+# This is separate from artifact rules above.
+# Example:
+#   operations:
+#     apply:
+#       guidance:
+#         - Keep test summaries concise
+#     archive:
+#       guidance:
+#         - Summarize the archive outcome before finishing

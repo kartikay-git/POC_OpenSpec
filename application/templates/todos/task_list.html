@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}My tasks{% endblock %}
+{% block content %}
+<section class="workspace">
+  <div class="workspace-heading"><div><p class="eyebrow">YOUR PERSONAL WORKSPACE</p><h1>Make today count.</h1><p class="lede">Hello, {{ user.username }}. One small step at a time.</p></div><form method="post" action="{% url 'logout' %}">{% csrf_token %}<button class="secondary" type="submit">Sign out</button></form></div>
+  <div class="card task-card"><div class="list-heading"><h2>My tasks</h2><span class="count">{{ tasks|length }}</span></div><form class="add-form" method="post">{% csrf_token %}<div class="input-group"><label class="sr-only" for="id_title">New task</label>{{ form.title }}{{ form.title.errors }}</div><button class="primary" type="submit">+ Add task</button></form>
+    <ul class="task-list">{% for task in tasks %}<li class="task-row"><span class="task-marker" aria-hidden="true"></span><div class="task-copy"><span class="task-title">{{ task.title }}</span><small>Added {{ task.created_at|date:"M j" }}</small></div><!-- TASK_ACTIONS --></li>{% empty %}<li class="empty-state"><span aria-hidden="true">☀</span><h3>A fresh start</h3><p>Add your first task above.</p></li>{% endfor %}</ul>
+  </div><p class="privacy-note">Your list is personal. Only your tasks appear here.</p>
+</section>
+{% endblock %}
